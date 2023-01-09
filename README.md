@@ -57,3 +57,16 @@ f64s := env.Float64List("FLOAT64_VAR")
 // []bool
 bs := env.BoolList("BOOL_VAR")
 ```
+
+## Allow missing environment variable
+
+Missing variable is an error case by default. Sometime, you may want to allow missing environment variable:
+
+```go
+
+s := env.String("STR_VAR", true) // will not error if missing
+
+i := env.Int("INT_VAR", false) // same as default case
+
+```
+
